@@ -22,21 +22,28 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val toolbar = findViewById<MaterialToolbar>(R.id.toolbar)
+        // Дает команду Android рассматривать панель инструментов так,
+        // словно она является стандартной панелью приложения, и вывести на ней имя приложения
         setSupportActionBar(toolbar)
 
+        // получаем ссылку на контроллер навигации из хоста навигации
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
+
+        // связывание выдвижной панели с контроллером навигации
         val navView = findViewById<NavigationView>(R.id.nav_view)
         NavigationUI.setupWithNavController(navView, navController)
 
+        // Связь панели инструментов с графом навигации
         val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
         val builder = AppBarConfiguration.Builder(navController.graph)
+        // на панели инструментов выводится значок для открытия выдвижной панели
         builder.setOpenableLayout(drawer)
         val appBarConfiguration = builder.build()
-
         toolbar.setupWithNavController(navController, appBarConfiguration)
 
+        // связываем нижнюю панель навигации с контроллером навигации
         val bottomNavView = findViewById<BottomNavigationView>(R.id.bottom_nav)
         bottomNavView.setupWithNavController(navController)
 
