@@ -10,4 +10,44 @@
         android:layout_height="wrap_content"
         android:text="Help" />
 
+    <!-- Основной контейнер -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Вопрос -->
+            <TextView
+                android:id="@+id/question_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How can I improve my experience with the app?"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:paddingBottom="8dp" />
+
+            <!-- Ответы -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Explore all the features of the app."
+                android:textSize="16sp"
+                android:paddingBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. Customize your settings to suit your preferences."
+                android:textSize="16sp"
+                android:paddingBottom="4dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </FrameLayout>
